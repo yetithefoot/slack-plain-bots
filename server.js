@@ -3,7 +3,7 @@ var request = require("request");
 var app = express();
 
 
-app.get('/'), function(req, res){
+app.get('/', function(req, res){
 	res.send("Im here!");
 });
 
@@ -32,9 +32,6 @@ app.get('/boobs', function(req, res) {
 		});
 
 	});
-
-
-
 });
 
 app.listen(3000);

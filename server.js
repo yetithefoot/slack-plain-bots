@@ -7,7 +7,7 @@ app.get('/', function(req, res){
 	res.send("Smart Enterprise Boobs Manager!");
 });
 
-app.get('/boobs', function(req, res) {
+app.post('/boobs', function(req, res) {
 
 	function randomInt(high) {
 		return Math.floor(Math.random() * high);

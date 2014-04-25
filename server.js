@@ -4,7 +4,7 @@ var app = express();
 
 
 app.get('/', function(req, res){
-	res.send("Im here!");
+	res.send("Smart Enterprise Boobs Manager!");
 });
 
 app.get('/boobs', function(req, res) {
@@ -32,6 +32,7 @@ app.get('/boobs', function(req, res) {
 		});
 
 	});
+	res.end();
 });
 
 app.listen(process.env.PORT || 5000);

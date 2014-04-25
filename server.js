@@ -19,8 +19,8 @@ app.post('/boobs', function(req, res) {
 		var payload = {
 			channel: "#general",
 			username: "boobsbot",
-			text: "http://media.oboobs.ru/" + JSON.parse(res.body)[0].preview,
-			icon_emoji: ":ghost:"
+			text: "http://media.oboobs.ru/" + JSON.parse(res.body)[0].preview
+			// icon_emoji: ":ghost:"
 		};
 
 		// var url = "http://requestb.in/no93g5no";

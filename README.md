@@ -1,11 +1,16 @@
 slack-boobs-bot
 ===============
-
 Bot for Slack chat that posting boobs images
+
+
 
 
 How it works
 ===
+
+__!NOTE: right now this bot works only for freechat.slack.com!__
+
+
 This bot available at URL http://slack-boobs-bot.herokuapp.com
 Bot integrates with Slack via Outgoing/Incoming Slack Webhooks.
 Everytime request is comming to ```/boobs``` path, bot send great boobs image to #general channel.

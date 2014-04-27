@@ -8,10 +8,13 @@ app.get('/', function(req, res){
 });
 
 app.post('/boobs', function(req, res) {
-	// console.dir(req);
+	console.dir(req);
 	
 	var backHost = req.headers.host;
 	var backToken = req.query.back_token; // token to be use for post back to Slack
+
+	// console.log(backHost);
+	// console.log(backToken);
 
 
 	function randomInt(high) {

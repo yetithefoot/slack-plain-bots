@@ -8,7 +8,7 @@ app.get('/', function(req, res){
 });
 
 app.post('/boobs', function(req, res) {
-	console.dir(req);
+	// console.dir(req);
 	
 	function randomInt(high) {
 		return Math.floor(Math.random() * high);

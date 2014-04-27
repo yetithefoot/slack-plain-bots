@@ -10,12 +10,8 @@ app.get('/', function(req, res){
 app.post('/boobs', function(req, res) {
 	console.dir(req);
 	
-	var backHost = req.headers.host;
+	var backHost = req.query.back_host; // chat to be use to back post to Slack
 	var backToken = req.query.back_token; // token to be use for post back to Slack
-
-	// console.log(backHost);
-	// console.log(backToken);
-
 
 	function randomInt(high) {
 		return Math.floor(Math.random() * high);

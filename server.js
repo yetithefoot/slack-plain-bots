@@ -10,7 +10,7 @@ app.get('/', function(req, res){
 app.post('/boobs', function(req, res) {
 	console.dir(req);
 	
-	var backDomain = req.body.team_domain; // chat to be use to back post to Slack
+	// var backDomain = req.body.team_domain; // chat to be use to back post to Slack
 	// var backToken = (req.query && req.query.back_token) || "Z89M3k3cnifutUcwSlmTz1Rp"; // token to be use for post back to Slack
 
 	function randomInt(high) {

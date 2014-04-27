@@ -6,12 +6,11 @@ Bot for Slack chat that posting great boobs images.
 
 
 How it works
-===
+---
 
 If this bot is integrated, it sends great tits image to channel, where keyword was triggered.
 Bot integrates with Slack via Slack Webhooks mechanism.
-This bot available at URL ```http://slack-boobs-bot.herokuapp.com/boobs```.
-Everytime request is comming to ```http://slack-boobs-bot.herokuapp.com/boobs``` path, bot sends back payload with tits image.
+Everytime POST request is comming to http://slack-boobs-bot.herokuapp.com/boobs path, bot sends back payload with tits image.
 
 
 Configuring Outgoing Webhook
@@ -24,6 +23,6 @@ Everything is simple. Slack should send a POST request to bot's url ```http://sl
 Then it responds with payload to Slack.
 
 Credits
-====
+---
 
 Thanx to guys from http://oboobs.ru for great API.

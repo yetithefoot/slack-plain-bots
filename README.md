@@ -9,7 +9,7 @@ How it works
 ---
 
 If this bot is integrated, it sends great tits image to channel, where keyword was triggered.
-Bot integrates with Slack via Slack Webhooks mechanism.
+Bot integrates with Slack via its Webhooks mechanism.
 Everytime POST request is comming to http://slack-boobs-bot.herokuapp.com/boobs path, bot sends back payload with tits image.
 
 

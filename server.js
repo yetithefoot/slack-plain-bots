@@ -10,33 +10,36 @@ app.get('/', function(req, res){
 app.post('/boobs', function(req, res) {
 	console.dir(req);
 	
-	var backHost = (req.query && req.query.back_host) || "freechat.slack.com"; // chat to be use to back post to Slack
-	var backToken = (req.query && req.query.back_token) || "Z89M3k3cnifutUcwSlmTz1Rp"; // token to be use for post back to Slack
+	var backDomain = req.body.team_domain; // chat to be use to back post to Slack
+	// var backToken = (req.query && req.query.back_token) || "Z89M3k3cnifutUcwSlmTz1Rp"; // token to be use for post back to Slack
 
 	function randomInt(high) {
 		return Math.floor(Math.random() * high);
 	}
 
 	var boobsUrl = "http://api.oboobs.ru/boobs/" + randomInt(5000) + "/1/rank";
-	request.get(boobsUrl, function(err, res) {
+	request.get(boobsUrl, function(err) {
 
 		var payload = {
-			channel: "#general",
-			username: "boobsbot",
+			// channel: "#general",
+			// username: "boobsbot",
 			text: "http://media.oboobs.ru/" + JSON.parse(res.body)[0].preview
 			// icon_emoji: ":ghost:"
 		};
 
-		// var url = "http://requestb.in/no93g5no";
-		var url = "https://"+backHost+"/services/hooks/incoming-webhook?token="+backToken;
+		// var url = "http://requestb.in/13i0nly1";
+		// var url = "https://"+backHost+"/services/hooks/incoming-webhook?token="+backToken;
+		// var url = "https://"+backDomain+".slack.com/services/hooks/incoming-webhook?token=Z89M3k3cnifutUcwSlmTz1Rp";
 
-		request.post({
-			url: url,
-			body: JSON.stringify(payload)
-		});
+		res.send(JSON.stringify(payload));
+		res.end();
+		// request.post({
+		// 	url: url,
+		// 	body: JSON.stringify(payload)
+		// });
 
 	});
-	res.end();
+	
 });
 
 app.listen(process.env.PORT || 5000);

@@ -243,7 +243,7 @@ var execute = function(req, res, next) {
 			break;
 		case "answer":
 			var randomindex = Math.floor(Math.random() * catAnswers.length);
-			text = "@" + (req.param("user_name") || "everyone") + catAnswers[randomindex];;
+			text = "@" + (req.param("user_name") || "everyone") + " " + catAnswers[randomindex];;
 			break;
 	}
 

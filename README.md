@@ -1,14 +1,16 @@
-slack-boobs-bot
+slack-plain-bots
 ======
 ![Slack.com logo](https://slack.global.ssl.fastly.net/8872/img/landing_slack_hash_wordmark_logo.png "Slack.com")
 
-Bot for Slack chat that posting great boobs images.
+Bot for Slack chat that posting something to it.
 
+List of available bots:
+* __boobs__ - it posts great tits images to Slack. Route = ```/boobs```.
 
 How it works
 ---
 
-If this bot is integrated, it sends great tits image to channel, where keyword was triggered.
+If this bot is integrated, it sends something to channel, where keyword was triggered.
 Bot integrates with Slack via its Webhooks mechanism.
 Everytime POST request is comming to http://slack-boobs-bot.herokuapp.com/boobs path, bot sends back payload with tits image.
 

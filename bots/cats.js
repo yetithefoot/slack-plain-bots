@@ -215,19 +215,28 @@ var catFacts = ["Котики, они рулят!",
 				];
 
 var execute = function(req, res, next) {
-	// console.dir(req);
-	
-	var text = "";
-	var random = Date.now();
-	if(random%2 === 0){
-		var randomindex = Math.floor(Math.random() * catFacts.length);
-		text = catFacts[randomindex];
-	}else{
-		var types = ["png","jpg","gif"];
-		var type = types[Math.floor(Math.random() * types.length)];
-		// text = "http://theoldreader.com/kittens/600/400?"+random;
-		text = "http://thecatapi.com/api/images/get?format=src&type="+type+"&"+random;
+
+	var modes = ["text", "image", "answer"];
+	// var modes = ["answer"];
+	var mode = modes[Math.floor(Math.random() * modes.length)];
+
+	var text = "Я занят";
+	switch (mode) {
+		case "text":
+			var randomindex = Math.floor(Math.random() * catFacts.length);
+			text = catFacts[randomindex];
+			break;
+		case "image":
+			var types = ["png","jpg","gif"];
+			var type = types[Math.floor(Math.random() * types.length)];
+			// text = "http://theoldreader.com/kittens/600/400?"+random;
+			text = "http://thecatapi.com/api/images/get?format=src&type="+type+"&"+Date.now();
+			break;
+		case "answer":
+			text = "@" + (req.param("user_name") || "everyone") + " что?";
+			break;
 	}
+
 
 	//post back
 	res.send(JSON.stringify({text: text}));

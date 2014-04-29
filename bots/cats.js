@@ -235,11 +235,28 @@ var execute = function(req, res, next) {
 			text = catTexts[randomindex];
 			break;
 		case "image":
-			var types = ["png","jpg","gif"];
-			var type = types[Math.floor(Math.random() * types.length)];
-			// text = "http://theoldreader.com/kittens/600/400?"+random;
-			text = "http://thecatapi.com/api/images/get?format=src&type="+type+"&"+Date.now();
-			break;
+			// thecat api images
+			// var types = ["png","jpg","gif"];
+			// var type = types[Math.floor(Math.random() * types.length)];
+			// // text = "http://theoldreader.com/kittens/600/400?"+random;
+			// text = "http://thecatapi.com/api/images/get?format=src&type="+type+"&"+Date.now();
+			
+			// 500px images
+			var page = Math.floor(Math.random() * 999);
+			var sorts = ["votes_count","rating","times_viewed", "favorites_count", "comments_count"];
+			var sort = sorts[Math.floor(Math.random() * sorts.length)];
+
+			var catUrl = "https://api.500px.com/v1/photos/search?consumer_key=VbiGx68xIs98oeeSCfWMVqOHmC4K45OBxwgaakMn&tag=cat&rpp=1&sort="+sort+"&image_size=4&page="+page;
+				request.get(catUrl, function(err, response) {
+					// post back
+					var payload = {
+						text: JSON.parse(response.body).photos[0].image_url
+					};
+
+					res.send(JSON.stringify(payload));
+					res.end();
+				});
+			return;
 		case "answer":
 			var randomindex = Math.floor(Math.random() * catAnswers.length);
 			text = "@" + (req.param("user_name") || "everyone") + " " + catAnswers[randomindex];;

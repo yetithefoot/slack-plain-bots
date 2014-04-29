@@ -1,12 +1,12 @@
 {
-	"name": "slack-boobs-bot",
-	"version": "0.0.1",
-	"main": "server.js",
-	"scripts": {
-		"start": "node server.js"
-	},
-	"dependencies": {
-		"express": "~4.0.0",
-		"request": "~2.34.0"
-	}
+  "name": "slack-plain-bots",
+  "version": "0.0.1",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "~4.0.0",
+    "request": "~2.34.0"
+  }
 }

@@ -203,7 +203,7 @@ var request = require("request");
 //         "A male cat is called a \'tom\' (or a \'gib,\' if neutered), and a female is called a \'molly\' or \'queen.\' The father of a cat is its \'sire,\' and mother is its \'dam.\' An immature cat of either sex is called a \'kitten.\' A group of cats is a \'clowder.\'"
 // ];
 
-var catFacts = ["Котики, они рулят!",
+var catTexts = ["Котики, они рулят!",
 				"Мяяяяууу!",
 				"Мур-мур-мур",
 				"Нассу тебе в тапок",
@@ -212,6 +212,15 @@ var catFacts = ["Котики, они рулят!",
 				"Запостите сисечек",
 				"Коты и сиськи. Что может быть лучше? Только коты с сиськами!",
 				"Мрррррр..."
+				];
+
+var catAnswers = ["что?",
+				"чего тебе?",
+				"я тут занят, давай по-быстрому говори!",
+				"буду ссать тебе в тапок!",
+				"погодь чуток",
+				"мур-мур?",
+				"шшшшшшш!"
 				];
 
 var execute = function(req, res, next) {
@@ -223,8 +232,8 @@ var execute = function(req, res, next) {
 	var text = "Я занят";
 	switch (mode) {
 		case "text":
-			var randomindex = Math.floor(Math.random() * catFacts.length);
-			text = catFacts[randomindex];
+			var randomindex = Math.floor(Math.random() * catTexts.length);
+			text = catTexts[randomindex];
 			break;
 		case "image":
 			var types = ["png","jpg","gif"];
@@ -233,7 +242,8 @@ var execute = function(req, res, next) {
 			text = "http://thecatapi.com/api/images/get?format=src&type="+type+"&"+Date.now();
 			break;
 		case "answer":
-			text = "@" + (req.param("user_name") || "everyone") + " что?";
+			var randomindex = Math.floor(Math.random() * catAnswers.length);
+			text = "@" + (req.param("user_name") || "everyone") + catAnswers[randomindex];;
 			break;
 	}
 

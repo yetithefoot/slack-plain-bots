@@ -16,6 +16,7 @@ Bot integrates with Slack via its Webhooks mechanism.
 
 
 For example:
+
 Everytime POST request is comming to http://slack-boobs-bot.herokuapp.com/boobs path, bot sends back payload with tits image.
 Everytime POST request is comming to http://slack-boobs-bot.herokuapp.com/cats path, bot sends back payload with cat image or cat phrases.
 

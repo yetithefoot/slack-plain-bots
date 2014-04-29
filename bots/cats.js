@@ -225,8 +225,7 @@ var catAnswers = ["что?",
 
 var execute = function(req, res, next) {
 
-	var modes = ["text", "image", "answer"];
-	// var modes = ["answer"];
+	var modes = ["text", "image", "image", "answer"]; // image twice to increase frequency of image posting
 	var mode = modes[Math.floor(Math.random() * modes.length)];
 
 	var text = "Я занят";

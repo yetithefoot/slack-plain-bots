@@ -223,7 +223,10 @@ var execute = function(req, res, next) {
 		var randomindex = Math.floor(Math.random() * catFacts.length);
 		text = catFacts[randomindex];
 	}else{
-		text = "http://theoldreader.com/kittens/600/400?"+random;
+		var types = ["png","jpg","gif"];
+		var type = Math.floor(Math.random() * types.length);
+		// text = "http://theoldreader.com/kittens/600/400?"+random;
+		text = "http://thecatapi.com/api/images/get?format=src&type="+type+"&"+random;
 	}
 
 	//post back

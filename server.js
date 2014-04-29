@@ -1,30 +1,16 @@
-var express = require('express');
-var request = require("request");
+var express = require("express");
 var app = express();
 
+// init routes
+var router = express.Router();
 
-app.get('/', function(req, res){
-	res.send("Smart Enterprise Boobs Manager!");
+// init bots from bots subfolder
+// each bot should exports function to register its route
+var botsdir = "./bots/";
+require("fs").readdirSync(botsdir).forEach(function(file) {
+	require(botsdir+file)(router);
 });
 
-app.post('/boobs', function(req, res) {
-	console.dir(req);
-	
-	function randomInt(high) {
-		return Math.floor(Math.random() * high);
-	}
-
-	var boobsUrl = "http://api.oboobs.ru/boobs/" + randomInt(5000) + "/1/rank";
-	request.get(boobsUrl, function(err, response) {
-
-		var payload = {
-			text: "http://media.oboobs.ru/" + JSON.parse(response.body)[0].preview
-		};
-
-		res.send(JSON.stringify(payload));
-		res.end();
-	});
-	
-});
+app.use("/", router); // use express router
 
 app.listen(process.env.PORT || 5000);

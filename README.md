@@ -5,8 +5,8 @@ slack-plain-bots
 Bot for Slack chat that posting something to it.
 
 List of available bots:
-* __boobs__ - it posts great tits images to Slack. Route = ```/boobs```.
-* __cats__ - posts cat phrases or cat images to Slack. Route = ```cats```.
+* __boobs__ - it posts great tits images to Slack. Route = ```http://slack-plain-bots.herokuapp.com/boobs```.
+* __cats__ - posts cat phrases or cat images to Slack. Route = ```http://slack-plain-bots.herokuapp.com/cats```.
 
 How it works
 ---
@@ -23,7 +23,7 @@ Everytime POST request is comming to http://slack-boobs-bot.herokuapp.com/cats p
 Configuring Outgoing Webhook
 ---
 
-Everything is simple. Lets configure boobs bot. Slack should send a POST request to bot's url ```http://slack-boobs-bot.herokuapp.com/boobs```, like here:
+Everything is simple. Lets configure boobs bot. Slack should send a POST request to bot's url ```http://slack-plain-bots.herokuapp.com/boobs```, like here:
 
 ![Configuring Outgoing Webhook](http://s3.postimg.org/j185vokqb/Screenshot_2014_04_26_13_13_50.png "Configuring Outgoing Webhook")
 

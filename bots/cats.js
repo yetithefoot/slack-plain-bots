@@ -224,7 +224,7 @@ var execute = function(req, res, next) {
 		text = catFacts[randomindex];
 	}else{
 		var types = ["png","jpg","gif"];
-		var type = Math.floor(Math.random() * types.length);
+		var type = types[Math.floor(Math.random() * types.length)];
 		// text = "http://theoldreader.com/kittens/600/400?"+random;
 		text = "http://thecatapi.com/api/images/get?format=src&type="+type+"&"+random;
 	}

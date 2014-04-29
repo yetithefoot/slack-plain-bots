@@ -33,4 +33,4 @@ Credits
 ---
 
 Thanx to guys from http://oboobs.ru for boobs API.
-Thanx to guys from http://thecatapi.com for cats API.
+Thanx to guys from http://500px.com for great photos API.

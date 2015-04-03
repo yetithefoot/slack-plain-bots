@@ -7,7 +7,7 @@ Bot for Slack chat that posting something to it.
 List of available bots:
 * __boobs__ - it posts great tits images to Slack. Available here http://slack-plain-bots.herokuapp.com/boobs.
 * __cats__ - posts cat phrases or cat images to Slack. Available here http://slack-plain-bots.herokuapp.com/cats.
-* __butts__ - post great booty images to Slack
+* __butts__ - it posts great booty images to Slack. Available here http://slack-plain-bots.herokuapp.com/butts
 
 How it works
 ---
@@ -19,6 +19,7 @@ For example:
 
 Everytime POST request is comming to http://slack-boobs-bot.herokuapp.com/boobs path, bot sends back payload with tits image.
 Everytime POST request is comming to http://slack-boobs-bot.herokuapp.com/cats path, bot sends back payload with cat image or cat phrases.
+Everytime POST request is comming to http://slack-boobs-bot.herokuapp.com/butts pah, bot sends back payload with butts image;
 
 
 Configuring Outgoing Webhook

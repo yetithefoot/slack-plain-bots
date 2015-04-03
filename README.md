@@ -7,6 +7,7 @@ Bot for Slack chat that posting something to it.
 List of available bots:
 * __boobs__ - it posts great tits images to Slack. Available here http://slack-plain-bots.herokuapp.com/boobs.
 * __cats__ - posts cat phrases or cat images to Slack. Available here http://slack-plain-bots.herokuapp.com/cats.
+* __butts__ - post great booty images to Slack
 
 How it works
 ---
@@ -33,4 +34,5 @@ Credits
 ---
 
 Thanx to guys from http://oboobs.ru for boobs API.
+Thanx to guys from http://obutts.ru for butts API.
 Thanx to guys from http://500px.com for great photos API.

@@ -25,7 +25,7 @@ var execute = function(req, res, next) {
 
 		}catch(e) {
 				console.error('Error happened: %j', e);
-				return res.send('I\'m busy, ask later! No butts!').end();
+				return res.send(JSON.stringify({text:'I\'m busy, ask later! No butts!'})).end();
 		}
 	});
 };
